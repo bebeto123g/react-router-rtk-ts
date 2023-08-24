@@ -1,0 +1,59 @@
+@import 'services/normalize';
+@import 'services/common';
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-y: scroll;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+html {
+    color: color(text, default);
+}
+
+:root {
+    --navbar-height: 64px;
+}
+
+@media screen and (min-width: $mobile) {
+    :root {
+        --navbar-height: 80px;
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    :root {
+        --navbar-height: 107px;
+    }
+}
+
+.hide-mobile {
+    @media (max-width: $mobile - 1px) {
+        display: none !important;
+    }
+}
+
+.hide-tablet {
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+        display: none !important;
+    }
+}
+
+.hide-desktop {
+    @media (min-width: $tablet) {
+        display: none !important;
+    }
+}
+
+/* Костыль деактивирует overlay CRA без eject */
+iframe {
+    display: none;
+}

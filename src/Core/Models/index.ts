@@ -1,1 +1,1 @@
-export * from './BootstrapModels';
+export * from './CoreModels';

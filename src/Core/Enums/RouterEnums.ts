@@ -1,4 +1,4 @@
 export enum ERouterPaths {
     HOME = '/',
-    ABOUT = '/about',
+    MATERIAL_TABLE = '/material-table',
 }

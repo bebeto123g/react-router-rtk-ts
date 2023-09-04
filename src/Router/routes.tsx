@@ -1,8 +1,9 @@
 import React from 'react';
 import { RouteObject } from 'react-router-dom';
-import AboutPage from 'Pages/AboutPage';
-import MainPage from 'Pages/MainPage';
-import { ERouterPaths } from './enums';
+import { ERouterPaths } from 'Core/Enums';
+import { HomePageLazy } from 'Modules/Home';
+import { MaterialTablePageLazy, MaterialTableRoutes } from 'Modules/MaterialTable';
+import { NotFoundPageLazy } from 'Modules/NotFound';
 
 /**
  * Головной роутер приложения
@@ -10,10 +11,15 @@ import { ERouterPaths } from './enums';
 export const routes: RouteObject[] = [
     {
         path: ERouterPaths.HOME,
-        element: <MainPage />,
+        element: <HomePageLazy />,
     },
     {
-        path: ERouterPaths.ABOUT,
-        element: <AboutPage />,
+        path: ERouterPaths.MATERIAL_TABLE,
+        element: <MaterialTablePageLazy />,
+        children: MaterialTableRoutes,
+    },
+    {
+        path: '*',
+        element: <NotFoundPageLazy />,
     },
 ];

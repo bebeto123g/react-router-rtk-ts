@@ -1,8 +1,13 @@
 import React, { Suspense } from 'react';
 import { useRoutes } from 'react-router-dom';
-import { Header } from 'Common/Components/Header';
+import styled from '@emotion/styled';
+import { Header } from 'Common/Widgets';
 import { routes } from 'Router';
 import './Styles/global.scss';
+
+const Container = styled.div`
+    margin: 84px 24px 12px;
+`;
 
 export const App = () => {
     const appRoutes = useRoutes(routes);
@@ -10,7 +15,9 @@ export const App = () => {
     return (
         <>
             <Header />
-            <Suspense fallback={<div>...Loading</div>}>{appRoutes}</Suspense>
+            <Container>
+                <Suspense fallback={<div>...Loading</div>}>{appRoutes}</Suspense>
+            </Container>
         </>
     );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { ERouterPaths } from 'Router';
+import { ERouterPaths } from 'Core/Enums';
 
 export const Header = () => {
     return (
@@ -21,11 +21,11 @@ export const Header = () => {
                     component="div"
                     sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                 >
-                    MUI
+                    React-TS-Router-Toolkit
                 </Typography>
-                <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                <Box sx={{ display: 'flex', gap: '16px' }}>
                     <NavLink to={ERouterPaths.HOME}>HOME</NavLink>
-                    <NavLink to={ERouterPaths.ABOUT}>ABOUT</NavLink>
+                    <NavLink to={ERouterPaths.MATERIAL_TABLE}>MATERIAL_TABLE</NavLink>
                 </Box>
             </Toolbar>
         </AppBar>

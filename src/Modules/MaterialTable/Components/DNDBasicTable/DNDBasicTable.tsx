@@ -1,5 +1,5 @@
 import React from 'react';
-import { BasicTable } from 'Common/UIKit/Table';
+import { BasicTable } from 'Common/Widgets/Table';
 import { BasicTableColumns, BasicTableData } from './constants';
 
 export const DNDBasicTable = () => {

@@ -1,0 +1,13 @@
+@import 'Styles/services/common';
+
+.link {
+    color: azure;
+    text-decoration: none;
+    &:hover {
+        color: color(text, default);
+    }
+}
+
+.active {
+    font-weight: bold;
+}

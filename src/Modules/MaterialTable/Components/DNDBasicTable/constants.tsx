@@ -1,5 +1,5 @@
 import { Checkbox } from '@mui/material';
-import { IBasicTableColumns, IBasicTableData } from 'Common/UIKit/Table';
+import { IBasicTableColumns, IBasicTableData } from 'Common/Widgets/Table';
 
 export const BasicTableColumns: IBasicTableColumns[] = [
     {

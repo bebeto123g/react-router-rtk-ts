@@ -34,7 +34,7 @@ export const MaterialTableRoutes: RouteObject[] = [
         element: <StickyHeadTable />,
     },
     {
-        path: EMaterialTableRouterPaths.VIRTIALIZED,
+        path: EMaterialTableRouterPaths.VIRTUALIZED,
         element: <VirtualizedTable />,
     },
     {

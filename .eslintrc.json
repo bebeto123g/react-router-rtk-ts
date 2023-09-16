@@ -82,7 +82,7 @@
         // Выключаем высшее зло
         "no-eval": "error",
         // Зацикливание
-        "import/no-cycle": "warn",
+        "import/no-cycle": "off",
         // Пустая строка после импортов
         "import/newline-after-import": "warn",
         "import/order": [

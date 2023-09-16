@@ -1,47 +1,25 @@
+import { ProviderRequestDecorator } from './decorators';
+import { ERestMethod } from './enums';
+import { TProviderMethodProps } from './interfaces';
+
 export class APIProvider {
-    async get<T>(url: string): Promise<T> {
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: { ['Content-Type']: 'application/json' },
-        });
-
-        if (!response.ok) throw new Error(response.statusText);
-        return response.json();
+    @ProviderRequestDecorator
+    public static async get(..._args: TProviderMethodProps) {
+        return ERestMethod.GET;
     }
 
-    async post<TResponse, TData extends object | FormData>(url: string, data: TData): Promise<TResponse> {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                ['Content-Type']: data instanceof FormData ? 'multipart/form-data' : 'application/json',
-            },
-            body: data instanceof FormData ? data : JSON.stringify(data),
-        });
-
-        if (!response.ok) throw new Error(response.statusText);
-        return response.json();
+    @ProviderRequestDecorator
+    public static async post(..._args: TProviderMethodProps) {
+        return ERestMethod.POST;
     }
 
-    async patch<TResponse, TData extends object | FormData>(url: string, data: TData): Promise<TResponse> {
-        const response = await fetch(url, {
-            method: 'PATCH',
-            headers: {
-                ['Content-Type']: data instanceof FormData ? 'multipart/form-data' : 'application/json',
-            },
-            body: data instanceof FormData ? data : JSON.stringify(data),
-        });
-
-        if (!response.ok) throw new Error(response.statusText);
-        return response.json();
+    @ProviderRequestDecorator
+    public static async patch(..._args: TProviderMethodProps) {
+        return ERestMethod.PATCH;
     }
 
-    async delete<TResponse>(url: string): Promise<TResponse> {
-        const response = await fetch(url, {
-            method: 'DELETE',
-            headers: { ['Content-Type']: 'application/json' },
-        });
-
-        if (!response.ok) throw new Error(response.statusText);
-        return response.json();
+    @ProviderRequestDecorator
+    public static async delete(..._args: TProviderMethodProps) {
+        return ERestMethod.DELETE;
     }
 }

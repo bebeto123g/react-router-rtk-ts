@@ -28,7 +28,7 @@ const TABLE_ROUTES: ITableSelectRoutes[] = [
     { name: 'Data Table', path: EMaterialTableRouterPaths.DATA },
     { name: 'Sorting Table', path: EMaterialTableRouterPaths.SORTING },
     { name: 'Stycky Header Table', path: EMaterialTableRouterPaths.STICKY_HEADER },
-    { name: 'Virtualized Table', path: EMaterialTableRouterPaths.VIRTIALIZED },
+    { name: 'Virtualized Table', path: EMaterialTableRouterPaths.VIRTUALIZED },
     { name: 'Material Example Table', path: EMaterialTableRouterPaths.MATERIAL_REACT },
 ];
 
@@ -62,7 +62,7 @@ export const SelectRouter = () => {
         if (currentPath) {
             setRoute(currentPath);
         }
-    }, []);
+    }, [location]);
 
     return (
         <div>

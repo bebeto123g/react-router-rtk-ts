@@ -4,3 +4,8 @@ export enum ERestMethod {
     PATCH = 'PATCH',
     DELETE = 'DELETE',
 }
+
+export enum EResponseStatus {
+    OK = 'OK',
+    FAIL = 'FAIL',
+}

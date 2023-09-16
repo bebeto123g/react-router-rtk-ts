@@ -5,3 +5,7 @@ export interface IProviderOriginalMethod {
     url: string;
     data?: object | FormData;
 }
+
+export type TProviderData = object | FormData | null;
+
+export type TProviderMethodProps = [url: string, data?: TProviderData, config?: RequestInit];

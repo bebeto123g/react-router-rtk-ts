@@ -1,6 +1,4 @@
 import React from 'react';
-import DeleteIcon from '@mui/icons-material/Delete';
-import FilterListIcon from '@mui/icons-material/FilterList';
 import {
     Box,
     Checkbox,
@@ -20,6 +18,8 @@ import {
     Tooltip,
     Typography,
 } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import FilterListIcon from '@mui/icons-material/FilterList';
 import { alpha } from '@mui/material/styles';
 import { visuallyHidden } from '@mui/utils';
 

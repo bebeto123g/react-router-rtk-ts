@@ -14,5 +14,6 @@ export type TRootState = ReturnType<typeof rootReducer>;
 export type TAppState = ReturnType<typeof setupStore>;
 export type TAppDispatch = TAppState['dispatch'];
 
+// TODO, чекнуть запрет импорта useDispatch и useSelector из redux, импортить только отсюда
 export const useAppDispatch = () => useDispatch<TAppDispatch>();
 export const useAppSelector: TypedUseSelectorHook<TRootState> = useSelector;

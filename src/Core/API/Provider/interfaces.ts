@@ -1,11 +1,17 @@
-import { ERestMethod } from './enums';
+import { EResponseStatus } from './enums';
 
-export interface IProviderOriginalMethod {
-    method: ERestMethod;
-    url: string;
-    data?: object | FormData;
+/** Передаваемые параметры методов головного провайдера */
+export type TProviderMethodProps = [
+    url: string,
+    data?: Pick<RequestInit, 'body'> | null,
+    config?: Omit<RequestInit, 'body'> | null
+];
+
+/** Ответ головного провайдера */
+export interface IProviderResponse<T = null> {
+    status: EResponseStatus;
+    data?: T | null;
+    errorMessage?: string | null;
+    error?: Error | null;
+    response?: Response;
 }
-
-export type TProviderData = object | FormData | null;
-
-export type TProviderMethodProps = [url: string, data?: TProviderData, config?: RequestInit];

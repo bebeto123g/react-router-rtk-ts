@@ -5,11 +5,7 @@ const HomePage = () => {
     const [todos, setTodos] = useState<any>(null);
 
     useEffect(() => {
-        APIProvider.get('https://jsonplaceholder.typicode.com/posts')
-            .then(setTodos)
-            .catch((e) => {
-                console.log(e);
-            });
+        APIProvider.get('https://jsonplaceholder1.typicode.com/posts', {}, {}).then(setTodos);
     }, []);
 
     return (
